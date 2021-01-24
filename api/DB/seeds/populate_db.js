@@ -25,7 +25,7 @@ exports.seed = async function(knex) {
     {blog_id: 3, user_id: 'UgZj81',
       blog_content: `Formula One is very much defined by its superstar drivers. Hamilton. Schumacher. Senna. These names loom large over entire eras of F1 racing. But while it’s the drivers that get the adulation, the legacies, and the lucrative watch endorsement deals, above all that Formula One is still a team sport. Credit: https://www.ign.com/articles/f1-2020-review`,
       title: 'F1 2020 Review',
-      img_url: `https://car-images.bauersecure.com/pagefiles/94394/f1_2020_game_042.jpghttps://car-images.bauersecure.com/pagefiles/94394/f1_2020_game_042.jpg`,
+      img_url: `https://www.codemasters.com/wp-content/uploads/2020/04/ps_f1_2020_new.jpg`,
       created_at: '2020-05-18 23:08:28.388677-07',
       updated_at: '2020-05-18 23:08:28.388677-07',
     },

@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const Knex = require('knex');
 const {Model} = require('objection');
 const config = require('../knexfile');
+const cors = require('cors');
 
 // import routes
 const userRoute = require('./routes/userRoute');
@@ -12,7 +13,7 @@ const blogRoute = require('./routes/blogRoute');
 const commentRoute = require('./routes/commentRoute');
 
 // Constants
-const PORT = 8080;
+const PORT = 5000;
 
 // initialize Knex
 const knex = Knex(config.development);
@@ -41,7 +42,7 @@ app.get('/', (req, res) => {
 // bodyParser gives req.body option for later
 app.use(bodyParser.json())
   .use(bodyParser.urlencoded({extended: true}))
-
+  .use(cors())
   .use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
