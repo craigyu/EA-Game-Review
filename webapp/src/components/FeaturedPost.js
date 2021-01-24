@@ -44,7 +44,7 @@ export default function FeaturedPost(props) {
                 Written by: {post.author}
               </Typography>
               <Typography variant="subtitle1" paragraph>
-               {moment(post.blog_date).format('YYYY MMM Do')}
+               {moment(post.blog_date).subtract(moment.duration(8, 'h')).format('YYYY MMM Do')}
               </Typography>
               <Typography variant="subtitle1" color="primary">
                 Read Article

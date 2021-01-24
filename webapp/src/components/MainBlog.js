@@ -54,7 +54,7 @@ export default function MainFeaturedPost(props) {
               {post.title}
             </Typography>
             <Typography variant="subtitle1" color="inherit" gutterBottom>
-              Written by: {post.author + '     ' + moment(post.blog_date).fromNow()}
+              Written by: {post.author + '     ' + moment(post.blog_date).subtract(moment.duration(8, 'h')).fromNow()}
             </Typography>
             <Link variant="subtitle1" href={link} style={{color:'white'}}>
               {post.linkText}

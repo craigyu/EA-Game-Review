@@ -100,7 +100,7 @@ export default class BlogPage extends Component {
                           {c.comment_content}{" "}
                         </p>
                         <p style={{textAlign: "left", color: "gray"}}>
-                          {moment(c.updated_at).fromNow()}
+                          { moment(c.updated_at).subtract(moment.duration(8, 'h')).fromNow()}
                         </p>
                       </Grid>
                     </Grid>
