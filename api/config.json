@@ -1,0 +1,13 @@
+{
+  "knex": {
+    "client": "sqlite3",
+    "connection": ":memory:",
+    "useNullAsDefault": true,
+    "pool": {
+      "min": 1,
+      "max": 1,
+      "destroyTimeoutMillis": 360000000,
+      "idleTimeoutMillis": 360000000
+    }
+  }
+}
