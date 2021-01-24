@@ -41,7 +41,7 @@ export default function Header(props) {
           noWrap
           className={classes.toolbarTitle}
         >
-          {title}
+          <a href="http://localhost:3000" style={{textDecoration: 'none', color:'inherit'}}>{title}</a>
         </Typography>
         <IconButton>
           <SearchIcon />

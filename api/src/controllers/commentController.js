@@ -6,7 +6,7 @@ class commentController {
     return async (req, res) => {
       const blog_id = req.params.blog_id;
       try {
-        const data = await commentModel.query().where('blog_id', blog_id).join('users', 'users.user_id', '=', 'comment.user_id');
+        const data = await commentModel.query().select('*').where('blog_id', blog_id).join('users', 'users.user_id', '=', 'comment.user_id');
         res.status(200).send(data);
       } catch (err) {
         res.status(400).send(err);

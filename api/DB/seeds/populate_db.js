@@ -53,8 +53,8 @@ exports.seed = async function(knex) {
       user_id: 'T6Shau',
       blog_id: 1,
       comment_content: `oh, they turned that movie into a game? nice`,
-      created_at: '2020-01-23 10:23:28.388677-07',
-      updated_at: '2020-01-23 10:23:28.388677-07',
+      created_at: '2021-01-23 10:23:28.388677-07',
+      updated_at: '2021-01-23 10:23:28.388677-07',
     },
     {
       comment_id: 4,

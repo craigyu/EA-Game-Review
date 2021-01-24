@@ -17,6 +17,8 @@ const blogTemplate = {
     date: null,
     image: null,
     author: null,
+    blog_id: null,
+    blog_date: null,
   };
 
 
@@ -44,6 +46,8 @@ export default class Home extends Component {
           image: main.img_url,
           linkText: 'Read Article',
           author: main.user_name,
+          blog_id: main.blog_id,
+          blog_date: main.updated_at,
         };
 
         blogs.shift();
@@ -55,6 +59,8 @@ export default class Home extends Component {
           b.title = blog.title;
           b.image = blog.img_url;
           b.author = blog.user_name;
+          b.blog_id = blog.blog_id;
+          b.blog_date = blog.updated_at;
           featureBlogs.push(b);
         }
 

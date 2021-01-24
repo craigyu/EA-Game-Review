@@ -31,7 +31,7 @@ export default function Footer(props) {
   const { description, title } = props;
 
   return (
-    <footer className={classes.footer} style={{position:"fixed", bottom:"0", width:"100%"}}>
+    <footer className={classes.footer} style={{position:"relative", bottom:"0", width:"100%", marginTop:"30px"}}>
       <Container maxWidth="lg">
         <Typography variant="h6" align="center" gutterBottom>
           {title}

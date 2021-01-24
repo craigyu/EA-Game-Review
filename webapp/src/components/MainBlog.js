@@ -5,6 +5,8 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
+import {api} from "../api";
+import moment from 'moment';
 
 const useStyles = makeStyles((theme) => ({
   mainFeaturedPost: {
@@ -38,11 +40,12 @@ const useStyles = makeStyles((theme) => ({
 export default function MainFeaturedPost(props) {
   const classes = useStyles();
   const { post } = props;
+  const link = api.webapp_url + `/blog?blog_id=${post.blog_id}`;
 
   return (
     <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${post.image})` , minHeight: '500px'}}>
       {/* Increase the priority of the hero background image */}
-      {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />}
+      {<img style={{ display: 'none' }} src={post.image} alt=''/>}
       <div className={classes.overlay} />
       <Grid container>
         <Grid item md={6}>
@@ -51,9 +54,9 @@ export default function MainFeaturedPost(props) {
               {post.title}
             </Typography>
             <Typography variant="subtitle1" color="inherit" gutterBottom>
-              Written by: {post.author}
+              Written by: {post.author + '     ' + moment(post.blog_date).fromNow()}
             </Typography>
-            <Link variant="subtitle1" href="#" style={{color:'white'}}>
+            <Link variant="subtitle1" href={link} style={{color:'white'}}>
               {post.linkText}
             </Link>
           </div>

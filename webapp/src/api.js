@@ -7,7 +7,8 @@ export const api = {
       'Access-Control-Allow-Origin': '*',
     },
   },
-
+  webapp_url : 'http://localhost:3000',
   getBlog: `${url}/blog`,
+  getComment: `${url}/comment`,
 
 };
