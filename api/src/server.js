@@ -2,10 +2,14 @@
 const promiseRouter = require('express-promise-router');
 const express = require('express');
 const bodyParser = require('body-parser');
-const userRoute = require('./routes/userRoute');
 const Knex = require('knex');
-const { Model } = require('objection');
+const {Model} = require('objection');
 const config = require('../knexfile');
+
+// import routes
+const userRoute = require('./routes/userRoute');
+const blogRoute = require('./routes/blogRoute');
+const commentRoute = require('./routes/commentRoute');
 
 // Constants
 const PORT = 8080;
@@ -22,9 +26,6 @@ const knex = Knex(config.development);
   }
 })();
 
-
-
-
 // bind all models to a Knex instance
 Model.knex(knex);
 
@@ -37,7 +38,7 @@ app.get('/', (req, res) => {
   res.sendStatus(200);
 });
 
-// bodyParser gives res.body option for later
+// bodyParser gives req.body option for later
 app.use(bodyParser.json())
   .use(bodyParser.urlencoded({extended: true}))
 
@@ -56,6 +57,8 @@ app.use(bodyParser.json())
 
   // register paths
   .use('/user', userRoute)
+  .use('/blog', blogRoute)
+  .use('/comment', commentRoute)
 
   // handle errors
   .use((req, res, next) => {
@@ -75,6 +78,6 @@ app.use(bodyParser.json())
   });
 
 app.listen(PORT, () => {
-  console.log('LiteFarm Backend listening on port ' + PORT + '!');
+  console.log('Review Backend listening on port ' + PORT + '!');
 });
 

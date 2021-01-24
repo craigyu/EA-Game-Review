@@ -8,28 +8,29 @@ exports.up = async function (knex, Promise) {
 
   /*** blog ***/
   await knex.schema.createTable('blog', (table) => {
-    table.integer('blog_id').increments();
-    table.string('content', 2000);
-    table.string('img_url');
-    table.string('author').references('user_id').inTable('users');
+    table.increments('blog_id');
+    table.string('user_id').references('user_id').inTable('users');
+    table.string('title').notNullable();
+    table.string('blog_content', 2000).notNullable();
+    table.string('img_url').nullable();
     table.timestamps(false, true);
   });
 
   /*** comment ***/
   await knex.schema.createTable('comment', (table) => {
-    table.increments();
+    table.increments('comment_id');
     table.string('user_id').references('user_id').inTable('users');
     table.integer('blog_id').references('blog_id').inTable('blog');
-    table.string('content', 255);
+    table.string('comment_content', 255).notNullable();
     table.timestamps(false, true);
   });
 
 };
 
 exports.down = async function (knex, Promise) {
-  await knex.schema.dropTable('users');
+  await knex.schema.dropTable('comment');
 
-  await knex.schema.dropTable('users');
+  await knex.schema.dropTable('blog');
 
   await knex.schema.dropTable('users');
 };
