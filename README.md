@@ -40,7 +40,8 @@ Tests can be only ran locally, but it can be easily integrated into CI/CD pipeli
 These are end to end tests for backend only.\
 To run the tests: 
 1. Go in to `/app` directory
-2. run `npm test`
+2. Make sure no backend server is running locally or on docker
+3. run `npm test`
 
 #### Credits:
 The front end is based on a template from Material-UI, made/maintained by a fellow UBC alumnus\
