@@ -27,7 +27,7 @@ This is a project done for the EA SRE interview, the detailed requirements are a
 3. The server should start right away
 
 #### Frontend
-1. pull the image `docker pull craigzyu/ea-game-review-api:latest`
+1. pull the image `docker pull craigzyu/ea-game-review-webapp:latest`
 2. run `docker run -p 3000:3000 -d craigzyu/ea-game-review-webapp`
 3. Need to wait for the server start
 4. Open browser with `http://localhost:3000`
