@@ -41,7 +41,7 @@ These are end to end tests for backend only.\
 To run the tests: 
 1. Go in to `/app` directory
 2. Make sure no backend server is running locally or on docker
-3. run `npm test`
+3. run `npm test`, assuming you have already ran `npm install` from earlier
 
 #### Credits:
 The front end is based on a template from Material-UI, made/maintained by a fellow UBC alumnus\
