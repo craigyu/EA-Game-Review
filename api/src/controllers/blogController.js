@@ -1,4 +1,5 @@
 const blogModel = require('../models/blogModel');
+const userModel = require('../models/userModel');
 const {transaction, Model} = require('objection');
 
 class blogController {
@@ -26,19 +27,29 @@ class blogController {
     };
   }
 
+
   static postBlog() {
     return async (req, res) => {
       const trx = await transaction.start(Model.knex());
-      try {
-        await blogModel.query(trx).insert(req.body);
-        await trx.commit();
-        res.sendStatus(201)
-      } catch (err) {
+      const data = req.body;
+      const user_id = data.user_id;
+      try{
+        // check if user exists
+        let user = await userModel.query(trx).select('*').where('user_id', user_id);
+        if(user.length === 1){
+          await blogModel.query(trx).insert(req.body);
+          await trx.commit();
+          res.sendStatus(201)
+        }else{
+          await trx.rollback();
+          res.status(400).send('user does not exist')
+        }
+      }
+      catch(err){
         await trx.rollback();
         res.status(400).send(err);
       }
     }
-
   }
 }
 

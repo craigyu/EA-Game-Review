@@ -17,7 +17,7 @@ class blogModel extends Model {
       required: ['user_id', 'title', 'blog_content'],
       properties: {
         blog_id: { type: 'integer' },
-        user_id: {type: 'string' },
+        user_id: {type: 'string', minLength: 1},
         title: {type: 'string', minLength: 1, maxLength: 63},
         blog_content: { type: 'string', minLength: 1, maxLength: 2000},
         img_url: { type: 'string' },

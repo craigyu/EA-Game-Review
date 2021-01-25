@@ -8,9 +8,9 @@ import Link from '@material-ui/core/Link';
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
+      {'Copyright © Craig Yu. '}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+        EA Interview Project
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}

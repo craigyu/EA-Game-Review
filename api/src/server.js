@@ -16,7 +16,13 @@ const commentRoute = require('./routes/commentRoute');
 const PORT = 5000;
 
 // initialize Knex
-const knex = Knex(config.development);
+let knex;
+if (process.env.NODE_ENV === "test") {
+  knex = Knex(config.test)
+} else {
+  knex = Knex(config.development)
+}
+
 
 (async () => {
   try {

@@ -17,7 +17,7 @@ class commentModel extends Model {
       required: ['user_id', 'blog_id', 'comment_content'],
       properties: {
         comment_id: {type: 'integer'},
-        user_id: { type: 'string' },
+        user_id: { type: 'string', minLength: 1},
         blog_id: { type: 'integer' },
         comment_content: { type: 'string', minLength: 1, maxLength: 255},
         created_at: { type : 'date-time' },
