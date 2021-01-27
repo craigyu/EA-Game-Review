@@ -39,7 +39,7 @@ A Swagger documentation can be viewed [here](https://app.swaggerhub.com/apis-doc
 Tests can be only ran locally, but it can be easily integrated into CI/CD pipeline.\
 These are end to end tests for backend only.\
 To run the tests: 
-1. Go in to `/app` directory
+1. Go in to `/api` directory
 2. Make sure no backend server is running locally or on docker
 3. run `npm test`, assuming you have already ran `npm install` from earlier
 
