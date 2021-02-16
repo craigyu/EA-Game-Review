@@ -2,6 +2,9 @@
 ## Description
 This is a project done for the EA SRE interview, the detailed requirements are at the bottom.
 
+## Result
+Went through 3 rounds interview and was not selected in the end. This assignment is done for the second round.
+
 ## Guide
 
 ### Environment
